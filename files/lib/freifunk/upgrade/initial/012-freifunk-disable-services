@@ -2,4 +2,4 @@
 
 /etc/init.d/dnsmasq disable
 /etc/init.d/telnet disable
-/etc/init.d/uhttpd enable
+/etc/init.d/uhttpd disable
