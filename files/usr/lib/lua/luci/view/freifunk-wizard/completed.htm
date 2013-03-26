@@ -1,0 +1,19 @@
+<%
+  local disp = require "luci.dispatcher"
+  local address = "ffwk@googlegroups.com"
+%>
+<%+header%>
+  <h2>Konfiguration abgeschlossen</h2>
+
+  <p>Bitte schick die MAC-Adresse deines Ger&auml;tes (Aufkleber auf der R&uuml;ckseite) an die Adresse <%=address%>, damit wir es auf der Karte darstellen k&ouml;nnen.</p>
+
+  <p>Die Konfiguration deines Ger&auml;tes ist nun abgeschlossen. Damit sie aktiv wird, muss es neu gestartet werden.<p>
+
+  <p>Um sp&auml;ter wieder in den Konfiguration-Modus zur&uuml;ckzukehren, zum Beispiel um die Konfiguration zu ver&auml;ndern oder ein Firmware-Upgrade durchzuf&uuml;hren,
+  muss der QSS-Button am Geh&auml;se f&uuml;r einige Sekunden gedr&uuml;ckt gehalten werden, w&auml;hrend der Knoten l&auml;uft. Der Knoten wird dann neu starten und in
+  den Konfigurationsmodus zur&uuml;ckkehren.</p>
+
+  <p>
+    <a class="btn primary" href="<%=disp.build_url("wizard", "completed", "reboot")%>">Jetzt neustarten!</a>
+  </p>
+<%+footer%>
