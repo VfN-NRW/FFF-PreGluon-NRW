@@ -19,8 +19,7 @@ function f.handle(self, state, data)
   if state == FORM_VALID then
     local stat = true
     uci:foreach("system", "system", function(s)
-        stat = stat and uci:set("system", s[".name"], "hostname", 
-data.hostname)
+        stat = stat and uci:set("system", s[".name"], "hostname", data.hostname)
       end
     )
 

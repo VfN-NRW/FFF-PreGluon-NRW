@@ -13,12 +13,10 @@ then
     entry({"wizard", "meshvpn"}, form("freifunk-wizard/meshvpn"), 
 "Vereins-VPN", 40).dependent=false
     entry({"wizard", "meshvpn", "pubkey"}, 
-template("freifunk-wizard/meshvpn-key"), "Vereins-VPN Schl&uuml;ssel", 
-1).dependent=false
+template("freifunk-wizard/meshvpn-key"), "Vereins-VPN Schl&uuml;ssel", 1).dependent=false
     entry({"wizard", "completed"}, 
 template("freifunk-wizard/completed"), "Fertig", 50).dependent=false
-    entry({"wizard", "completed", "reboot"}, call("reboot"), "reboot", 
-1).dependent=false
+    entry({"wizard", "completed", "reboot"}, call("reboot"), "reboot", 1).dependent=false
   end
 end
 
