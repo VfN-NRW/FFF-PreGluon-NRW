@@ -3,14 +3,14 @@ local meshvpn_name = "mesh_vpn"
 local uci = luci.model.uci.cursor()
 local nav = require "luci.tools.freifunk-wizard.nav"
 
-local f = SimpleForm("meshvpn", "Vereins-VPN", "<p>Um deinen Freifunkknoten auch \
+local f = SimpleForm("meshvpn", "Verein-VPN", "<p>Um dein Freifunkger&auml;t auch \
 &uuml;ber das Internet mit dem Freifunk-Netzwerk zu verbinden, kann ein \
-Vereins-VPN aktiviert werden. Dies erlaubt es, das Ger&auml;t auch zu betreiben, \
-auch wenn es keine anderen Ger&auml;te in deiner Umgebung sind, mit denen eine \
+Vereins-VPN aktiviert werden.<br>Dies erlaubt es, das Ger&auml;t auch zu betreiben, \
+auch wenn es keine anderen Ger&auml;te in deiner Umgebung gibt,<br>mit denen eine \
 WLAN-Verbindung m&ouml;glich ist.</p><p>Dabei wird zur Kommunikation ein \
 verschl&uuml;sselter Tunnel verwendet, sodass f&uuml;r den Anschluss-Inhaber \
 keinerlei Risiken entstehen.</p><p>Wenn du mehr dar&uuml;ber erfahren \
-m&ouml;chtest, klicke <a href=\"http://wk.freifunk.net/mitmachen.html\">hier</a></p> \
+m&ouml;chtest, klicke <a href=\"http://wk.freifunk.net/mitmachen.html\">hier</a>.</p> \
 <p>Damit der Vereins-VPN deine Internet-Verbindung nicht \
 unverh&auml;ltnism&auml;&szlig;ig auslastet, kann die Bandbreite begrenzt werden. \
 Wenn du zum Beispiel eine DSL-16000-Leitung hast und maximal ein Viertel der \
@@ -20,7 +20,7 @@ auszubremsen, bitten wir darum, mindestens 2000&nbsp;kbit/s im Downstream und \
 200&nbsp;kbit/s im Upstream bereitzustellen.</p>")
 f.template = "freifunk-wizard/wizardform"
 
-meshvpn = f:field(Flag, "meshvpn", "Vereins-VPN aktivieren?")
+meshvpn = f:field(Flag, "meshvpn", "Verein-VPN aktivieren?")
 meshvpn.default = string.format("%d", uci:get("fastd", meshvpn_name, "enabled", "0"))
 meshvpn.rmempty = false
 

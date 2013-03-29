@@ -2,7 +2,7 @@ local uci = luci.model.uci.cursor()
 
 local nav = require "luci.tools.freifunk-wizard.nav"
 
-local f = SimpleForm("hostname", "Name deines Freifunkknotens", "Als \
+local f = SimpleForm("hostname", "Name deines Freifunkger&auml;ts", "Als \
 n&auml;chstes solltest du deinem Freifunkger&auml;t einen individuellen\
 Namen geben. Dieser hilft dir und auch uns den &Uuml;berblick zu behalten.")
 f.template = "freifunk-wizard/wizardform"
