@@ -5,13 +5,13 @@ local nav = require "luci.tools.freifunk-wizard.nav"
 
 local f = SimpleForm("meshvpn", "Verein-VPN", "<p>Um dein Freifunkger&auml;t auch \
 &uuml;ber das Internet mit dem Freifunk-Netzwerk zu verbinden, kann ein \
-Vereins-VPN aktiviert werden.<br>Dies erlaubt es, das Ger&auml;t auch zu betreiben, \
-auch wenn es keine anderen Ger&auml;te in deiner Umgebung gibt,<br>mit denen eine \
+Verein-VPN aktiviert werden.<br>Dies erlaubt es, das Ger&auml;t auch zu betreiben, \
+wenn es keine anderen Ger&auml;te in deiner Umgebung gibt,<br>mit denen eine \
 WLAN-Verbindung m&ouml;glich ist.</p><p>Dabei wird zur Kommunikation ein \
 verschl&uuml;sselter Tunnel verwendet, sodass f&uuml;r den Anschluss-Inhaber \
 keinerlei Risiken entstehen.</p><p>Wenn du mehr dar&uuml;ber erfahren \
 m&ouml;chtest, klicke <a href=\"http://wk.freifunk.net/mitmachen.html\">hier</a>.</p> \
-<p>Damit der Vereins-VPN deine Internet-Verbindung nicht \
+<p>Damit der Verein-VPN deine Internet-Verbindung nicht \
 unverh&auml;ltnism&auml;&szlig;ig auslastet, kann die Bandbreite begrenzt werden. \
 Wenn du zum Beispiel eine DSL-16000-Leitung hast und maximal ein Viertel der \
 Leitung zur Verf&uuml;gung stellen willst, muss als Downstream-Bandbreite \
