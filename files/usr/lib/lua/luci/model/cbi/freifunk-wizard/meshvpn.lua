@@ -5,8 +5,8 @@ local nav = require "luci.tools.freifunk-wizard.nav"
 
 local f = SimpleForm("meshvpn", "Verein-VPN", "<p>Um dein Freifunkger&auml;t auch \
 &uuml;ber das Internet mit dem Freifunk-Netzwerk zu verbinden, kann ein \
-Verein-VPN aktiviert werden.<br>Dies erlaubt es, das Ger&auml;t auch zu betreiben, \
-wenn es keine anderen Ger&auml;te in deiner Umgebung gibt,<br>mit denen eine \
+Verein-VPN aktiviert werden. Dies erlaubt es, das Ger&auml;t auch zu betreiben, \
+wenn es keine anderen Ger&auml;te in deiner Umgebung gibt, mit denen eine \
 WLAN-Verbindung m&ouml;glich ist.</p><p>Dabei wird zur Kommunikation ein \
 verschl&uuml;sselter Tunnel verwendet, sodass f&uuml;r den Anschluss-Inhaber \
 keinerlei Risiken entstehen.</p><p>Wenn du mehr dar&uuml;ber erfahren \
@@ -20,11 +20,11 @@ auszubremsen, bitten wir darum, mindestens 2000&nbsp;kbit/s im Downstream und \
 200&nbsp;kbit/s im Upstream bereitzustellen.</p>")
 f.template = "freifunk-wizard/wizardform"
 
-meshvpn = f:field(Flag, "meshvpn", "Verein-VPN aktivieren?")
+meshvpn = f:field(Flag, "meshvpn", "Verein-VPN aktivieren")
 meshvpn.default = string.format("%d", uci:get("fastd", meshvpn_name, "enabled", "0"))
 meshvpn.rmempty = false
 
-tc = f:field(Flag, "tc", "Bandbreitenbegrenzung aktivieren?")
+tc = f:field(Flag, "tc", "Bandbreitenbegrenzung aktivieren")
 tc.default = string.format("%d", uci:get_first("freifunk", "bandwidth", "enabled", "0"))
 tc.rmempty = false
 
@@ -35,16 +35,27 @@ upstream.value = uci:get_first("freifunk", "bandwidth", "upstream", "0")
 
 function f.handle(self, state, data)
   if state == FORM_VALID then
-    local stat = false
     uci:set("fastd", meshvpn_name, "enabled", data.meshvpn)
     uci:save("fastd")
     uci:commit("fastd")
 
     uci:foreach("freifunk", "bandwidth", function(s)
-            uci:set("freifunk", s[".name"], "upstream", data.upstream)
-            uci:set("freifunk", s[".name"], "downstream", data.downstream)
-            uci:set("freifunk", s[".name"], "enabled", data.tc)
-            end
+		if type(data.upstream) ~= "nil" then
+			uci:set("freifunk", s[".name"], "upstream", data.upstream)
+		else
+			uci:set("freifunk", s[".name"], "upstream", "0")
+			end
+		if type(data.downstream) ~= "nil" then
+			uci:set("freifunk", s[".name"], "downstream", data.downstream)
+		else
+			uci:set("freifunk", s[".name"], "downstream", "0")
+			end
+		if type(data.tc) ~= "nil" then
+			uci:set("freifunk", s[".name"], "enabled", data.tc)
+		else
+			uci:set("freifunk", s[".name"], "enabled", "0")
+			end
+		end
     )
 
     uci:save("freifunk")

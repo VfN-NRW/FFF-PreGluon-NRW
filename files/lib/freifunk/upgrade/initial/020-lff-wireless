@@ -1,4 +1,4 @@
-#!/bin/sh
+﻿#!/bin/sh
 
 uci -q batch <<EOF
 delete wireless.radio0.disabled
@@ -7,6 +7,10 @@ delete wireless.@wifi-iface[0]
 set wireless.radio0.channel='5'
 set wireless.radio0.htmode='HT20'
 set wireless.radio0.country='US'
+set wireless.radio0.noscan='1'
+set wireless.radio0.txpower='27'
+set wireless.radio0.wmm='1'
+set wireless.radio0.beacon_int='400'
 
 set wireless.wifi_freifunk='wifi-iface'
 set wireless.wifi_freifunk.device='radio0'
@@ -22,6 +26,7 @@ set wireless.wifi_mesh.mode='adhoc'
 set wireless.wifi_mesh.ssid='FF-BATBONE'
 set wireless.wifi_mesh.bssid='02:CA:FF:EE:21:96'
 set wireless.wifi_mesh.mcast_rate='12000'
+set wireless.wifi_mesh.hidden='1'
 
 commit wireless
 EOF
