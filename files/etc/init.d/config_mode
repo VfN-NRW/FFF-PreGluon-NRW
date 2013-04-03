@@ -25,8 +25,7 @@ start() {
 	config_foreach check_enable wizard
 
 	if [ "$enable" = '1' ]; then
-		lua -luci -e 'require "luci.model.uci"; uci_state=luci.model.uci.cursor_state(); uci_state:section("config_mode", "wizard", nil, { running = "1" }); 
-uci_state:save("config_mode")'
+		lua -luci -e 'require "luci.model.uci"; uci_state=luci.model.uci.cursor_state(); uci_state:section("config_mode", "wizard", nil, { running = "1" }); uci_state:save("config_mode")'
 		uci set 'config_mode.@wizard[0].enabled=0'
 		uci commit config_mode
 		
