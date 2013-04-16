@@ -10,7 +10,7 @@ set wireless.radio0.country='US'
 set wireless.radio0.noscan='1'
 set wireless.radio0.txpower='27'
 set wireless.radio0.wmm='1'
-set wireless.radio0.beacon_int='400'
+set wireless.radio0.beacon_int='500'
 
 set wireless.wifi_freifunk='wifi-iface'
 set wireless.wifi_freifunk.device='radio0'
