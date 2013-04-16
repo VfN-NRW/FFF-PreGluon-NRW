@@ -39,7 +39,7 @@ start() {
 		/etc/init.d/dropbear start
 		/etc/init.d/uhttpd start
 		/etc/init.d/led start
-		
+
 		# correctly finish firstboot
 		/etc/init.d/done boot
 
