@@ -10,7 +10,7 @@ local f = SimpleForm("hostname", "Name deines Freifunkger&auml;ts", " \
 <p>Eine Kontaktadresse erm&ouml;glicht es uns, im Falle eines Problems mit deinem Ger&auml;t, dich per Email zu erreichen. Wenn wir die Adresse &ouml;ffentlich \
 anzeigen d&uuml;rfen, musst du dies explizit aktivieren.</p> \
 <p>Bitte trag die Position deines Ger&auml;ts hier ein, mit gesetztem Haken wird dein Ger&auml;t auf unserer Karte angezeigt. Die Koordinaten f&uuml;r dein \
-Ger&auml;t findest du <a target="_blank" href=\"http://wermelskirchen.freifunk.net/map-wk/\">hier</a> heraus.</p> \
+Ger&auml;t findest du <a target=\"_blank\" href=\"http://wermelskirchen.freifunk.net/map-wk/\">hier</a> heraus.</p> \
 <p>Solltest du die Position nicht eintragen, werden wir versuchen die Position deines Freifunkger&auml;ts automatisch zu ermitteln. Dies ist notwendig \
 um das Ger&auml;t auf der Karte darzustellen. Wenn du nicht m&ouml;chtest das wir das tun, entferne den Haken bei \"Position automatisch ermitteln\".</p>")
 f.template = "freifunk-wizard/wizardform"
