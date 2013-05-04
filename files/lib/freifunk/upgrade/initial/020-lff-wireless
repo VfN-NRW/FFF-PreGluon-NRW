@@ -25,7 +25,7 @@ set wireless.wifi_mesh.mode='adhoc'
 
 set wireless.wifi_mesh.ssid='FF-BATBONE v14'
 set wireless.wifi_mesh.bssid='02:CA:FF:EE:21:96'
-set wireless.wifi_mesh.mcast_rate='12000'
+set wireless.wifi_mesh.mcast_rate='6000'
 
 commit wireless
 EOF
