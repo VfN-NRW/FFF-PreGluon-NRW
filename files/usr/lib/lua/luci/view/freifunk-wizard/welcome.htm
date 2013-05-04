@@ -1,0 +1,18 @@
+<%
+        local disp = require "luci.dispatcher"
+        local nav = require "luci.tools.freifunk-wizard.nav"
+        local predecessor, successor = nav.get()
+%>
+<%+header%>
+        <h2>Willkommen auf deinem Freifunkger&auml;t!</h2>
+        <p>Danke, dass Du Freifunk unterst&uuml;tzt.</p>
+        <p>Dieser Wizard hilft dir dein Ger&auml;t nun einzurichten. Dabei f&uuml;hrt er dich schrittweise durch die wichtigsten Punkte.</p>
+
+        <div class="actions">
+<% if successor then %>
+                <a class="btn primary" href="<%=luci.dispatcher.build_url("wizard", successor.href)%>">Ger&auml;t neu einrichten</a>
+<% end %>
+
+                <a class="btn" href="<%=luci.dispatcher.build_url("admin", "system", "flashops")%>">Softwareupdate einspielen</a>
+        </div>
+<%+footer%>

@@ -1,0 +1,27 @@
+<%
+  local meshvpn_name = "mesh_vpn"
+  local address = "key@freifunk-nrw.de"
+
+  local disp = require "luci.dispatcher"
+  local f = io.popen("/etc/init.d/fastd show_key " .. meshvpn_name, "r")
+  local key = f:read("*a")
+  f:close()
+
+%>
+<%+header%>
+  <h2>Sch&uuml;sselaustausch</h2>
+  <p>Dies ist der Sch&uuml;ssel deines Freifunkknotens. Bitte schicke
+     <ul>
+       <li>ihn
+       <li>die MAC-Adresse deines Routers (Aufkleber auf der R&uuml;ckseite)
+       <li>deine Mitgliednummer
+     </ul>
+     an <a href="mailto:<%=address%>"><%=address%></a>, um deinen Zugang zum Verein-VPN zu aktivieren.</p>
+  <p>Wenn du noch nicht Mitglied bist, findest du <a href="http://wermelskirchen.freifunk.net/mitmachen.html">hier</a> weitere Informationen.</p>
+  <p><b>Hinweis:</b> Wir bem&uuml;hen uns den Zugang zeitnah zur Verf&uuml;gung zu stellen, doch zeitweise kann es einige Stunden dauern bis dein 
+     Ger&auml;t eine Verbindung &uuml;ber das Internet aufbauen kann.</p>
+  <div style="text-align: center;font-size: 2em;line-height: 1em; background: #f5f5f5; border: 1px solid #ececec; margin-bottom: 0.5em; padding: 0.5em">
+    <%=key%>
+  </div>
+<%+freifunk-wizard/nav%>
+<%+footer%>
