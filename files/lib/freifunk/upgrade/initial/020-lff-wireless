@@ -4,6 +4,7 @@ uci -q batch <<EOF
 delete wireless.radio0.disabled
 delete wireless.radio1.disabled
 delete wireless.@wifi-iface[0]
+delete wireless.@wifi-iface[1]
 
 set wireless.radio0.channel='5'
 set wireless.radio0.htmode='HT20'
