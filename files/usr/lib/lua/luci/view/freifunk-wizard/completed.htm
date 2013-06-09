@@ -1,0 +1,20 @@
+<%
+  local disp = require "luci.dispatcher"
+  local address = "kontakt@freifunk-nrw.de"
+%>
+<%+header%>
+  <h2>Konfiguration abgeschlossen</h2>
+
+  <p><b>Hinweis:</b> Bei jeglichen Probleme melde dich per Email bei der Adresse <a href="mailto:<%=address%>"><%=address%></a>,
+     oft ist es hilfreich wenn du die MAC-Adresse (Aufkleber auf der R&uuml;ckseite deines Ger&auml;tes) mitsendest.</p>
+
+  <p>Die Konfiguration deines Ger&auml;tes ist nun abgeschlossen. Damit sie aktiv wird, muss es neu gestartet werden.<p>
+
+  <p>Um sp&auml;ter wieder in den Konfiguration-Modus zur&uuml;ckzukehren, zum Beispiel um die Konfiguration zu ver&auml;ndern oder ein Software-Update durchzuf&uuml;hren,
+  muss der QSS-Knopf am Geh&auml;se f&uuml;r einige Sekunden gedr&uuml;ckt gehalten werden, w&auml;hrend das Ger&auml;t l&auml;uft. Es wird neu starten und in
+  den Konfigurationsmodus zur&uuml;ckkehren.</p>
+
+  <p>
+    <a class="btn primary" href="<%=disp.build_url("wizard", "completed", "reboot")%>">Jetzt neustarten!</a>
+  </p>
+<%+footer%>
