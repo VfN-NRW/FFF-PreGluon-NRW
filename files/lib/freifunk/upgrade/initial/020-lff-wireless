@@ -16,7 +16,7 @@ set wireless.wifi_freifunk='wifi-iface'
 set wireless.wifi_freifunk.device='radio0'
 set wireless.wifi_freifunk.network='freifunk'
 set wireless.wifi_freifunk.mode='ap'
-set wireless.wifi_freifunk.ssid='wk.freifunk.net'
+set wireless.wifi_freifunk.ssid='ob.freifunk.net'
 
 set wireless.wifi_mesh='wifi-iface'
 set wireless.wifi_mesh.device='radio0'
@@ -24,7 +24,7 @@ set wireless.wifi_mesh.network='mesh'
 set wireless.wifi_mesh.mode='adhoc'
 
 set wireless.wifi_mesh.ssid='FF-BATBONE v14'
-set wireless.wifi_mesh.bssid='02:CA:FF:EE:21:96'
+set wireless.wifi_mesh.bssid='52:CA:FF:EE:BA:BE'
 set wireless.wifi_mesh.mcast_rate='6000'
 
 commit wireless
