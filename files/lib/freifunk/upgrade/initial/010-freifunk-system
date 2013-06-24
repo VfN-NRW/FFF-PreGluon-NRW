@@ -37,6 +37,6 @@ uci -q batch <<EOF
 	set system.@system[0].hostname='Freifunk-${macaddr//:/}'
 	set system.@system[0].timezone='CET-1CEST,M3.5.0,M10.5.0/3'
 	set system.ntp='timeserver'
-	set system.ntp.server='fda0:747e:ab29:2196::c01 fda0:747e:ab29:2196::c02'
+	set system.ntp.server='fda0:747e:ab29:4600::c01 fda0:747e:ab29:4600::c02'
 	commit system
 EOF
