@@ -12,6 +12,7 @@ set wireless.radio0.beacon_int='500'
 set wireless.radio0.distance='50'
 set wireless.radio0.basic_rate '12000 18000 24000 36000 48000 54000'
 set wireless.radio0.maxassoc='60'
+set wireless.radio0.ieee80211d='0'
 
 
 set wireless.wifi_freifunk='wifi-iface'
