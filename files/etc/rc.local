@@ -8,11 +8,11 @@ tc qdisc replace dev eth0 root fq_codel limit 600 quantum 500 noecn
 tc qdisc replace dev eth1 root fq_codel limit 600 quantum 500 noecn
 tc qdisc replace dev wlan0-1 root fq_codel limit 600 quantum 528 noecn
 
-ifconfig mesh-vpn txqueuelen 0
-ifconfig eth0 txqueuelen 0
-ifconfig eth1 txqueuelen 0
-ifconfig wlan0 txqueuelen 0
-ifconfig wlan0-1 txqueuelen 0
+ifconfig mesh-vpn txqueuelen 20
+ifconfig eth0 txqueuelen 20
+ifconfig eth1 txqueuelen 20
+ifconfig wlan0 txqueuelen 20
+ifconfig wlan0-1 txqueuelen 20
 
 exit 0
 
