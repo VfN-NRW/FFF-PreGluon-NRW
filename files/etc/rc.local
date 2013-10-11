@@ -13,7 +13,6 @@ ifconfig eth0 txqueuelen 1000
 ifconfig eth1 txqueuelen 1000
 ifconfig wlan0-1 txqueuelen 1000
 ifconfig wlan0-1 mtu 2274 #maximum
-iw phy phy0 set frag 798 # typical mtu + batman (1500 + 28) /2 + 34 (=overhead of wlan per frame)
 
 exit 0
 
