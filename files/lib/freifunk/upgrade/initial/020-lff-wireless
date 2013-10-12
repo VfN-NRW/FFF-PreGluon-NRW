@@ -10,9 +10,7 @@ set wireless.radio0.country='DE'
 set wireless.radio0.wmm='1'
 set wireless.radio0.beacon_int='100'
 set wireless.radio0.distance='50'
-set wireless.radio0.basic_rate '6000 9000 12000 18000 24000 36000 48000 
-54000'
-
+set wireless.radio0.basic_rate '6000 9000 12000 18000 24000 36000 48000 54000'
 
 set wireless.wifi_freifunk='wifi-iface'
 set wireless.wifi_freifunk.device='radio0'
