@@ -8,7 +8,7 @@ tc qdisc replace dev eth1 root fq_codel limit 1000 quantum 500 noecn
 tc qdisc replace dev wlan0-1 root fq_codel limit 1000 quantum 528 noecn
 
 ifconfig wlan0 txqueuelen 1000
-ifconfig wlan0 mtu 2246 #maximum
+ifconfig wlan0 mtu 2246 #maximum - 28 Byte for Batman-adv
 ifconfig eth0 txqueuelen 1000
 ifconfig eth1 txqueuelen 1000
 ifconfig wlan0-1 txqueuelen 1000
