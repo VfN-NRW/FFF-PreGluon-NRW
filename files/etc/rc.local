@@ -2,17 +2,25 @@
 # the system init finished. By default this file does nothing.
 
 insmod sch_fq_codel
+
 tc qdisc replace dev wlan0 root fq_codel limit 3000 quantum 300 noecn
+tc qdisc replace dev wlan1 root fq_codel limit 3000 quantum 300 noecn
 tc qdisc replace dev eth0 root fq_codel limit 3000 quantum 328 noecn
 tc qdisc replace dev eth1 root fq_codel limit 3000 quantum 394 noecn
 tc qdisc replace dev wlan0-1 root fq_codel limit 3000 quantum 328 noecn
+tc qdisc replace dev wlan1-1 root fq_codel limit 3000 quantum 328 noecn
 
+ifconfig mesh-vpn txqueuelen 50
 ifconfig wlan0 txqueuelen 3000
-ifconfig wlan0 mtu 2246 #maximum - 28 Byte for Batman-adv
+ifconfig wlan0 mtu 2246
+ifconfig wlan1 txqueuelen 3000
+ifconfig wlan1 mtu 2246
 ifconfig eth0 txqueuelen 3000
-ifconfig eth1 txqueuelen 3000
 ifconfig wlan0-1 txqueuelen 3000
-ifconfig wlan0-1 mtu 2274 #maximum
+ifconfig wlan0-1 mtu 2274
+ifconfig wlan1-1 txqueuelen 3000
+ifconfig wlan1-1 mtu 2274
 
 exit 0
+
 
