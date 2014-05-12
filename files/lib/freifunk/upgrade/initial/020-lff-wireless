@@ -16,7 +16,7 @@ set wireless.wifi_freifunk='wifi-iface'
 set wireless.wifi_freifunk.device='radio0'
 set wireless.wifi_freifunk.network='freifunk'
 set wireless.wifi_freifunk.mode='ap'
-set wireless.wifi_freifunk.ssid_online='wk.freifunk.net'
+set wireless.wifi_freifunk.ssid_online='gel.freifunk.net'
 set wireless.wifi_freifunk.ssid='Freifunk-Gerät startet...'
 
 set wireless.wifi_mesh='wifi-iface'
