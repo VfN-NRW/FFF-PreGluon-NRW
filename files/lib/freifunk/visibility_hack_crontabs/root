@@ -1,2 +1,3 @@
 */6 * * * * ethersend br-freifunk 00:00:00:00:00:00 ffff < /dev/null
 0   5 * * * reboot 
+*/1 * * * * offline-ssid.sh 60
